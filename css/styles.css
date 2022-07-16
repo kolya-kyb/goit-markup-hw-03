@@ -14,6 +14,9 @@
     --color-filter-btn:#F5F4FA;
     --color-filter-btn-accent:#2196F3;
     --contact-color:rgba(255, 255, 255, 0.6);
+    --color-section-team:#F5F4FA;
+    --card-color:#FFFFFF;
+    --color-border-gallery:#EEEEEE;
 }
 
 .list {
@@ -32,6 +35,8 @@ h1, h2, h3, h4, p {
 } 
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 body {
     font-family: var(--primary-font);
@@ -45,6 +50,8 @@ body {
 }
  .page-nav { 
     display: flex;
+    align-items: center;
+   
 } 
  .menu {
     display: flex;
@@ -52,7 +59,8 @@ body {
 } 
 .page-header .container{
     display: flex;
-
+    align-items: center;
+    
 }
 .heder-list-contact{
     display: flex;
@@ -65,6 +73,8 @@ body {
     margin-right: 50px;
 }
 .page-header{
+    padding-top: 24px; 
+    padding-bottom: 25px;
     border-bottom: 1px solid #ECECEC;
 }
 .logo {
@@ -141,10 +151,11 @@ body {
 .section{
     
     padding-top: 94px;
-}
-.section:last-of-type {
     padding-bottom: 94px;
 }
+/* .section:last-of-type {
+    padding-bottom: 94px;
+} */
 .hero.section{
     padding-top: 200px;
     padding-bottom: 200px;
@@ -173,9 +184,14 @@ body {
     clip: rect(0 0 0 0); 
     overflow: hidden; 
     } 
-.features-list{
+.flex-list{
     display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
+.features-item {
+    flex-basis: calc((100% - 90px) / 4);
+  }
 .features-subtitle {
     margin-bottom: 10px;
     font-weight: 700;
@@ -192,24 +208,57 @@ body {
     letter-spacing: 0.03em;
 }
 .team-subtitle {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.19;
-        text-align: center;
-        letter-spacing: 0.03em;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+}
+.team-card-content{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background:var(--card-color);
+    border-radius: 0px 0px 4px 4px;
 }
 
+.work-item{
+    flex-basis: calc((100% - 60px) / 3);
+}
+
+.section-team {
+    background: var(--color-section-team);
+}
+
+.team-item{
+    flex-basis: calc((100% - 90px) / 4);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}    
+    
 .team-text{
-        line-height: 1.19;
-        text-align: center;
+    line-height: 1.19;
+    text-align: center;
         letter-spacing: 0.03em;
 }
 
 .footer {
-        background-color: var(--color-container);
+    padding-top:60px;
+    padding-bottom:60px;
+    background-color: var(--color-container);
 }
+.footer-logo{
+    margin-bottom: 20px;
+}
+
+
 .color-logo-footer {
     color: var(--color-logo-footer);
+}
+
+.address-item:not(:last-child){
+    margin-bottom: 9px;
 }
 .address-link{
         font-size: 14px;
@@ -217,19 +266,35 @@ body {
         letter-spacing: 0.03em;
         color: var(--primary-text-color-theme-dark);
 }
+
 .address-link:hover,
 .address-link:focus {
     color: var(--accent-color);
 }
 
 .address {
+    width: 231px;
     font-style: normal;
 }
+
 .contact-color{ color: var(--contact-color);
 
 }
+
 /* =========Portfolio =========*/
+.list-button{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+.button-item:not(:last-child){
+    margin-right:8px;
+}
 .filter-btn {
+    padding-top:6px;
+    padding-bottom: 6px;
+    padding-right: 30px;
+    padding-left: 30px;
     font-family: inherit;
     font-weight: 500;
     font-size: 16px;
@@ -247,6 +312,7 @@ body {
     border-radius: 4px;
 }
 .gallery-subtitle{
+    margin-bottom:4px;
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
@@ -255,4 +321,22 @@ body {
 .gallery-text {
     line-height: 1.88;
     letter-spacing: 0.03em;
+}
+.img-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    
+}
+
+.img-item {
+    flex-basis: calc((100% - 60px) / 3);
+}
+.gallery-card{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 24px;
+    padding-left: 24px;
+    background: var(--card-color);
+    border: 1px solid var(--color-border-gallery);
 }
